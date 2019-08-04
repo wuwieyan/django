@@ -1,0 +1,1 @@
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <title>显示图书中人物信息</title></head><body><h1 style="color: #5b80b2">{{ book.btitle }}</h1>人物信息如下：<br/><ul>    {% for hero in heros %}    <li>        {{hero.hname}}--{{hero.hgender}}--{{hero.hskills}}    </li>    {% empty %}    <li>没有相关信息</li>{% endfor %}</ul></body></html>
