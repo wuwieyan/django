@@ -1,0 +1,1 @@
+# 自定义过滤器from django.template import Library# 创建一个Library类对象register=Library()@register.filterdef mod(num):    return num%2 == 0

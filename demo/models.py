@@ -7,6 +7,8 @@ class BookInfo(models.Model):
 
     btitle = models.CharField(max_length=30)
     bpub_date = models.DateField()
+    bread=models.IntegerField(default=0)
+    isDelete=models.BooleanField(default=False)
 
 
 class HeroInfo(models.Model):

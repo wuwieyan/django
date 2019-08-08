@@ -26,7 +26,7 @@ SECRET_KEY = '#cys#es54=ptw)5v^v%-kf@(s6s^aoweads&68^#g^6h%1-^hu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+  #  'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -124,3 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES=[os.path.join(BASE_DIR,'static')]  # 设置静态文件的保存目录
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+STATICFILES_DIRS = (
+        ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),
+         ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
+        ('image',os.path.join(STATIC_ROOT,'image').replace('\\','/') ),
+        ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ),
+    )
